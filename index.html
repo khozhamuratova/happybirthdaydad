@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>403 Forbidden</title>
+    <style>
+        body { 
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            margin: 0; padding: 20px; background-color: #ffffff; color: #000000;
+        }
+        #lock-screen { text-align: center; margin-top: 150px; }
+        #lock-screen h1 { font-size: 32px; font-weight: bold; }
+        #dad-content { display: none; width: 100%; max-width: 100%; box-sizing: border-box; }
+        video { 
+            width: 100%; height: auto; border: 1px solid #000; margin-bottom: 20px; display: block; background: #000;
+        }
+        video::-webkit-media-controls-volume-slider,
+        video::-webkit-media-controls-mute-button { display: none !important; }
+        .text-block { font-size: 19px; line-height: 1.4; text-align: left; }
+        .name-footer { margin-top: 25px; font-size: 19px; padding-bottom: 60px; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <div id="lock-screen">
+        <h1>Ошибка 403</h1>
+    </div>
+
+    <div id="dad-content">
+        <video id="videoPlayer" controls playsinline webkit-playsinline controlsList="nodownload noplaybackrate">
+            <source src="video.mp4" type="video/mp4">
+            Ваш телефон не поддерживает видео.
+        </video>
+
+        <div class="text-block">Папа, поздравляю с днём рождения. Я хочу сказать вам спасибо за всё: за мое беззаботное детство, за ваши советы, за вашу веру в меня.<br>Я желаю вам всего наилучшего. Пусть здоровье не подводит, удача шагает следом, а в душе всегда будет тепло и спокойно.</div>
+
+        <div class="name-footer">Рушана</div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        // СЛОЖНЫЙ ПАРОЛЬ:
+        if (params.get('access') === 'HbD_Dad_2026_x9Zq') {
+            document.getElementById('lock-screen').style.display = 'none';
+            document.getElementById('dad-content').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
